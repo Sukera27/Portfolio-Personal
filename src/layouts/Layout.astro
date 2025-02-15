@@ -1,5 +1,6 @@
 ---
-import Header from "../components/header.astro";
+import Header from "../components/Header.astro";
+import "@fontsource-variable/onest";
 ---
 
 <!doctype html>
@@ -13,16 +14,22 @@ import Header from "../components/header.astro";
   </head>
   <body>
     <Header />
+    <slot />
   </body>
 </html>
 
-<style>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+  }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "onest-variable", "system-ui", sans-serif;
   }
   body {
-    background: #000;
+    background: #050505;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    height: 100vh;
   }
 </style>
